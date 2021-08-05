@@ -104,4 +104,5 @@ cask 'font-source-sans-pro'
 cask 'font-source-serif-pro'
 
 # Mac App Store
-mas 'Tailscale', id: 1475387142
+#tailscale
+mas install 1475387142
