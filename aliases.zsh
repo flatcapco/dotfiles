@@ -1,6 +1,9 @@
 # Shortcuts
 alias copyssh="pbcopy < $HOME/.ssh/id_rsa.pub"
 alias reloadshell="source $HOME/.zshrc"
+alias zshconfig="sublime $HOME/.zshrc"
+alias ohmyzsh="sublime $HOME/.oh-my-zsh"
+
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias ll="/usr/local/opt/coreutils/libexec/gnubin/ls -AhlFo --color --group-directories-first"
 alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
@@ -11,33 +14,35 @@ alias c="clear"
 alias dotfiles="cd $DOTFILES"
 alias library="cd $HOME/Library"
 alias sites="cd $HOME/Sites"
-alias lara="sites && cd laravel/"
-alias docs="lara && cd docs/"
+#alias lara="sites && cd laravel/"
+# alias ls='ls -G'
+
 
 # Laravel
-alias a="php artisan"
-alias fresh="php artisan migrate:fresh --seed"
+alias pa="php artisan"
 alias seed="php artisan db:seed"
+alias mfs="php artisan migrate:fresh --seed"
+alias tinker='php artisan tinker'
+alias clear='php artisan cache:clear;php artisan config:clear;php artisan route:clear;php artisan view:clear;php artisan clear-compiled;composer dump-autoload;php artisan config:cache;php artisan route:cache;'
+
 
 # PHP
 alias cfresh="rm -rf vendor/ composer.lock && composer i"
-alias php74="docker run -it -w /data -v ${PWD}:/data:delegated --entrypoint php --rm registry.gitlab.com/grahamcampbell/php:7.4"
-alias php8="docker run -it -w /data -v ${PWD}:/data:delegated --entrypoint php --rm registry.gitlab.com/grahamcampbell/php:8.0"
+alias cda="composer dump-autoload" 
+# alias composer="php /usr/local/bin/composer.phar"
+
+
 
 # JS
 alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
 alias watch="npm run watch"
 
-# Vagrant
-alias v="vagrant global-status"
-alias vup="vagrant up"
-alias vhalt="vagrant halt"
-alias vssh="vagrant ssh"
-alias vreload="vagrant reload"
-alias vrebuild="vagrant destroy --force && vagrant up"
 
-# Docker
-alias docker-composer="docker-compose"
+# Wordpress structure
+alias plugins='cd $PWD/wp-content/plugins/'
+alias themes='cd $PWD/wp-content/themes/'
+
+
 
 # Git
 alias gst="git status"
