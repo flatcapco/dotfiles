@@ -1,8 +1,8 @@
 # Shortcuts
 alias copyssh="pbcopy < $HOME/.ssh/id_rsa.pub"
 alias reloadshell="source $HOME/.zshrc"
-alias zshconfig="sublime $HOME/.zshrc"
-alias ohmyzsh="sublime $HOME/.oh-my-zsh"
+alias zshconfig="subl $HOME/.zshrc"
+alias ohmyzsh="subl $HOME/.oh-my-zsh"
 
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias ll="/usr/local/opt/coreutils/libexec/gnubin/ls -AhlFo --color --group-directories-first"
@@ -23,7 +23,7 @@ alias pa="php artisan"
 alias seed="php artisan db:seed"
 alias mfs="php artisan migrate:fresh --seed"
 alias tinker='php artisan tinker'
-alias clear='php artisan cache:clear;php artisan config:clear;php artisan route:clear;php artisan view:clear;php artisan clear-compiled;composer dump-autoload;php artisan config:cache;php artisan route:cache;'
+alias pac='php artisan cache:clear;php artisan config:clear;php artisan route:clear;php artisan view:clear;php artisan clear-compiled;composer dump-autoload;php artisan config:cache;php artisan route:cache;'
 
 
 # PHP
