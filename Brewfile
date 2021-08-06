@@ -5,6 +5,8 @@ tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
 tap 'nicoverbruggen/homebrew-cask'
 
+
+
 # Binaries
 brew 'awscli'
 brew 'bash' # Latest Bash version
@@ -46,6 +48,7 @@ brew 'yarn'
 brew 'sip'
 brew 'dash'
 brew 'wp-cli'
+brew 'omkatv/powerlevel10k/powerlevel10k'
 
 # Apps
 cask '1password'
@@ -76,7 +79,6 @@ cask 'helo'
 cask 'iterm2'
 cask 'karabiner-elements'
 cask 'notion'
-cask 'numi'
 cask 'phpmon'
 cask 'ray'
 cask 'rectangle'
@@ -95,6 +97,7 @@ cask 'quicklook-csv'
 cask 'qlstephen'
 
 # Fonts
+cask 'font-hack-nerd-font'
 cask 'font-lato'
 cask 'font-open-sans'
 cask 'font-roboto'

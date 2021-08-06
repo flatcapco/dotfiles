@@ -14,11 +14,16 @@ brew update
 brew tap homebrew/bundle
 brew bundle
 
+brew services start mysql
 # Set default MySQL root password and auth type.
-mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
+# dont need a password 
+# mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
+
 
 # Install PHP extensions with PECL
 pecl install memcached imagick
+
+
 
 # Install global Composer packages
 /usr/local/bin/composer global require laravel/installer laravel/valet
