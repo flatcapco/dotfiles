@@ -21,7 +21,7 @@ brew services start mysql
 
 
 # Install PHP extensions with PECL
-pecl install memcached imagick
+pecl install memcached imagick redis
 
 
 
