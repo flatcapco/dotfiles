@@ -1,5 +1,6 @@
 # Shortcuts
 alias copyssh="pbcopy < $HOME/.ssh/id_rsa.pub"
+alias knownhosts="subl < $HOME/.ssh/known_hosts"
 alias reloadshell="source $HOME/.zshrc"
 alias zshconfig="subl $HOME/.zshrc"
 alias ohmyzsh="subl $HOME/.oh-my-zsh"

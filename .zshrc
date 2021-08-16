@@ -8,6 +8,19 @@ fi
 # Path to your dotfiles.
 export DOTFILES=$HOME/.dotfiles
 
+
+# Uncomment these 3 lines to use node v14 
+# export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
+# export LDFLAGS="-L/opt/homebrew/opt/node@14/lib"
+# export CPPFLAGS="-I/opt/homebrew/opt/node@14/include"
+
+# Uncomment these 3 lines to use node v12
+export PATH="/opt/homebrew/opt/node@12/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/node@12/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/node@12/include"
+
+
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
