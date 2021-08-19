@@ -2,8 +2,10 @@
 alias reloadshell="source $HOME/.zshrc"
 alias copyssh="pbcopy < $HOME/.ssh/id_rsa.pub"
 alias knownhosts="subl $HOME/.ssh/known_hosts"
+alias aliases="subl $DOTFILES/aliases.zsh"
 alias zshconfig="subl $HOME/.zshrc"
 alias ohmyzsh="subl $HOME/.oh-my-zsh"
+alias s="subl"
 
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias ll="/usr/local/opt/coreutils/libexec/gnubin/ls -AhlFo --color --group-directories-first"
