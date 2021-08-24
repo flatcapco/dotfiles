@@ -18,7 +18,7 @@ alias dotfiles="cd $DOTFILES"
 alias library="cd $HOME/Library"
 alias sites="cd $HOME/Sites"
 #alias lara="sites && cd laravel/"
-# alias ls='ls -G'
+alias ls='ls -G'
 
 
 # Laravel
