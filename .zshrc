@@ -30,6 +30,10 @@ export ZSH=$HOME/.oh-my-zsh
 # Enable completions
 autoload -Uz compinit && compinit
 
+# pretty z style
+zstyle ':completion:*' menu select
+
+
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # You can set one of the optional three formats:
@@ -48,8 +52,8 @@ ZSH_CUSTOM=$DOTFILES
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
+  zsh-z
 	# composer
-  	# zsh-z
 )
 
 source $ZSH/oh-my-zsh.sh

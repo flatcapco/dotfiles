@@ -106,6 +106,7 @@ cask 'qlstephen'
 # Fonts
 cask 'font-hack-nerd-font'
 cask 'font-lato'
+cask 'font-jost'
 cask 'font-open-sans'
 cask 'font-roboto'
 cask 'font-source-code-pro-for-powerline'
