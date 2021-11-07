@@ -16,6 +16,10 @@ alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 alias c="clear"
 
+alias nrp="npm run production"
+alias nrw="npm run watch"
+
+
 # Directories
 alias dotfiles="cd $DOTFILES"
 alias library="cd $HOME/Library"
@@ -29,7 +33,7 @@ alias pa="php artisan"
 alias seed="php artisan db:seed"
 alias mfs="php artisan migrate:fresh --seed"
 alias tinker='php artisan tinker'
-alias pac='php artisan cache:clear;php artisan config:clear;php artisan route:clear;php artisan view:clear;php artisan clear-compiled;composer dump-autoload;php artisan config:cache;php artisan route:cache;'
+alias pac='php artisan cache:clear;php artisan config:clear;php artisan route:clear;php artisan view:clear;php artisan clear-compiled;composer dump-autoload;'
 
 
 # PHP
