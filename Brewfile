@@ -52,6 +52,7 @@ brew 'wp-cli'
 brew 'omkatv/powerlevel10k/powerlevel10k'
 
 # Apps
+cask 'mimestream'
 cask '1password'
 cask '1password-cli'
 cask 'alfred'
