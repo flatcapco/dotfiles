@@ -37,9 +37,10 @@ alias pac='php artisan cache:clear;php artisan config:clear;php artisan route:cl
 
 
 # PHP
-alias cfresh="rm -rf vendor/ composer.lock && composer i"
+
 alias cda="composer dump-autoload" 
-# alias composer="php /usr/local/bin/composer.phar"
+alias cfresh="rm -rf vendor/ composer.lock && composer i"
+alias composer="php -d memory_limit=-1 /opt/homebrew/bin/composer"
 
 
 
@@ -55,6 +56,7 @@ alias themes='cd $PWD/wp-content/themes/'
 
 
 # Git
+
 alias gst="git status"
 alias gb="git branch"
 alias gc="git checkout"
@@ -71,3 +73,5 @@ alias resolve="git add . && git commit --no-edit"
 alias stash="git stash -u"
 alias unstage="git restore --staged ."
 alias wip="commit wip"
+
+
