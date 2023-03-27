@@ -14,15 +14,24 @@ fi
 export DOTFILES=$HOME/.dotfiles
 
 
+
+export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/node@18/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/node@18/include"
+
+
+
+
 # Uncomment these 3 lines to use node v14 
 # export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
 # export LDFLAGS="-L/opt/homebrew/opt/node@14/lib"
 # export CPPFLAGS="-I/opt/homebrew/opt/node@14/include"
 
 # Uncomment these 3 lines to use node v12
-export PATH="/opt/homebrew/opt/node@12/bin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/node@12/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/node@12/include"
+# export PATH="/opt/homebrew/opt/node@12/bin:$PATH"
+# export LDFLAGS="-L/opt/homebrew/opt/node@12/lib"
+# export CPPFLAGS="-I/opt/homebrew/opt/node@12/include"
+
 
 
 
@@ -87,3 +96,6 @@ source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # Created by `pipx` on 2021-11-22 13:09:04
 export PATH="$PATH:/Users/flatcap/.local/bin"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
