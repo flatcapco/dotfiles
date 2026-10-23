@@ -15,7 +15,7 @@ alias nrw="npm run watch"
 
 
 # Directories
-alias dotfiles= "cd $HOME/.dotfiles"
+alias dotfiles="cd $HOME/.dotfiles"
 
 alias sites="cd $HOME/Sites"
 
@@ -23,13 +23,13 @@ alias ls='ls -G'
 
 
 # Laravel
-alias pa="php artisan"
+alias pa="herd php artisan"
 
-alias mfs="php artisan migrate:fresh --seed"
+alias mfs="herd php artisan migrate:fresh --seed"
 
-alias tinker='php artisan tinker'
+alias tinker='herd php artisan tinker'
 
-alias pac='php artisan cache:clear;php artisan config:clear;php artisan route:clear;php artisan view:clear;php artisan clear-compiled;composer dump-autoload;'
+alias pac='herd php artisan cache:clear;herd php artisan config:clear;herd php artisan route:clear;herd php artisan view:clear;herd php artisan clear-compiled;composer dump-autoload;'
 
 
 alias rpint="vendor/bin/rector process; pint;"
@@ -37,9 +37,9 @@ alias rpint="vendor/bin/rector process; pint;"
 alias rpp="vendor/bin/rector process; pint; ./node_modules/.bin/prettier --write resources/**/*.blade.php"
 
 # PHP
-
+alias composer="herd composer"
+alias php="herd php"
 alias cda="composer dump-autoload" 
-
 alias cfresh="rm -rf vendor/ composer.lock && composer i"
 
 alias cu="composer show --no-dev --direct --name-only \

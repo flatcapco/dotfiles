@@ -1,50 +1,51 @@
+# ~/.dotfiles/.zshrc  — symlinked to ~/.zshrc
 
-# Path to your dotfiles.
-export DOTFILES=$HOME/.dotfiles
+# Homebrew must be initialised BEFORE oh-my-zsh, so that
+# /opt/homebrew/share/zsh/site-functions is in $fpath when compinit runs.
+# Without this ordering, brew-installed completions (git, gh, stripe, rclone…)
+# are in $fpath but never registered.
+if [[ -x /opt/homebrew/bin/brew ]] && [[ -z ${HOMEBREW_PREFIX-} ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
+export DOTFILES="$HOME/.dotfiles"
+export ZSH="$HOME/.oh-my-zsh"
 
-# Enable completions
-autoload -Uz compinit && compinit
-
-# pretty z style
-zstyle ':completion:*' menu select
-
-
-
-# Minimal - Theme Settings
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
+# ---- oh-my-zsh ----
+ZSH_THEME="minimal"
+ZSH_CUSTOM="$DOTFILES"
 HIST_STAMPS="dd/mm/yyyy"
+plugins=(artisan git composer)
 
-# Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=$DOTFILES
+# minimal theme (subnixr/minimal)
+export MNML_INSERT_CHAR="$"
+export MNML_PROMPT=(mnml_git mnml_keymap)
+export MNML_RPROMPT=('mnml_cwd 20')
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-git
-zsh-z
-)
+source "$ZSH/oh-my-zsh.sh"
 
+# ---- locale ----
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
-source $ZSH/oh-my-zsh.sh
+# ---- Laravel Herd ----
+export PHP_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/:$PHP_INI_SCAN_DIR"
+for _v in 74 80 81 82 83 84 85 86; do
+  export "HERD_PHP_${_v}_INI_SCAN_DIR=$HOME/Library/Application Support/Herd/config/php/${_v}/"
+done
+unset _v
+path=("$HOME/Library/Application Support/Herd/bin" $path)
 
-# User configuration
+export NVM_DIR="$HOME/Library/Application Support/Herd/config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+[[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] \
+  && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-export LC_ALL=en_GB.UTF-8
-export LANG=en_GB.UTF-8
-
-
-
-
+# ---- extra PATH ----
+# mysql-client@8.4 first: it matches the MySQL 8.x servers DBngin runs.
+# brew's default mysql-client is 9.x, whose mysqldump output and auth
+# plugin handling are incompatible with 8.0/8.4 servers.
+path=("$HOME/bin" "$HOME/.local/bin" \
+      /opt/homebrew/opt/mysql-client@8.4/bin \
+      /opt/homebrew/opt/mysql-client/bin $path)
+typeset -U path PATH
